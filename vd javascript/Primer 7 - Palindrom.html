@@ -1,0 +1,68 @@
+
+<html>
+<head>
+<title>Palindrom</title>
+<script language="javascript">
+
+function reverseString(aString){
+  var  rString = "";
+  var  alen = aString.length;
+  for (var i = alen ; i > 0 ; i--){
+    rString += aString.charAt(i-1)   // str.charAt(i) dohvata karakter sa indeksom i u stringu str; indeks prvog karaktera je 0, drugog 1, poslednjeg string.length-1
+  }
+  return rString;
+}
+function palindrome(aString){
+  return (aString == reverseString(aString));
+   }
+  function doCodeForPalin(){
+  var aStr = document.palinForm.inputWord.value;
+  document.palinForm.outputWord.value = reverseString(aStr);  
+  document.palinForm.isPalin.value = palindrome(aStr);
+  return true;
+   }
+ 
+ 
+</script>
+</head>
+<body bgcolor="white">
+<h1>Palindrom</h1>
+<table cellspacing="0" cellpadding="6" border="0" bgcolor="#99AA99" width="350">
+<tr><td colspan="2">&nbsp;</td></tr> 
+<form name="palinForm">
+	<tr>
+	  <td align="right">
+	   Unesite rec da bi proverili da li je palindrom :
+	  </td>
+	  <td valign="middle">
+	    <input type="text" name="inputWord" >
+	  </td>
+	</tr>
+	<tr>
+	  <td align="right">
+	    <input type="button" name="doIt" value="izracunaj" onclick="doCodeForPalin()">
+	  </td>
+	  <td>&nbsp;</td>
+	</tr>
+	<tr>
+	  <td align="right">
+	   Obrnuta rec :
+	  </td>
+	  <td>
+	    <input type="text" name="outputWord">
+	  </td>
+	</tr>
+	
+<tr>
+  <td align="right">
+    Rezultat je
+  </td>
+  <td align="left">
+    <input type="text" name="isPalin">
+  </td>
+</tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+</form>
+</table>
+</body>
+</html>

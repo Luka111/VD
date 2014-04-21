@@ -1,0 +1,110 @@
+
+<html>
+  <head>
+
+    <title>  Total Options Selected --- Variations    </title>
+       
+<script language="JavaScript">
+   <!--
+   
+   function numberOfSltns(selectElmnt){
+         var totalSelected = 0;
+         for (var i = 0 ; i < selectElmnt.length ; i++){
+                if (selectElmnt.options[i].selected){
+                        totalSelected++ ;
+                }
+        }
+        return totalSelected ;
+   }
+
+   function textOfSltns(selectElmnt){
+        var textSelected = "" ;
+        for (var i = 0 ; i < selectElmnt.length ; i++){
+                if (selectElmnt.options[i].selected){
+                        textSelected  =  textSelected + "\n" + selectElmnt.options[i].value ;
+                }
+        }
+        return textSelected ;
+   }
+
+   function textArrayOfSltns(selectElmnt){
+       var textSelected = new Array() ;
+        for (var i = 0 ; i < selectElmnt.length ; i++){
+                if (selectElmnt.options[i].selected){
+                        textSelected[textSelected.length]  =  selectElmnt.options[i].value ;
+                }
+        }
+        return textSelected ;
+   }
+
+   function doCodeForShowNumSelections(){
+         document.selectExample.numberOfSelections.value
+                = numberOfSltns(document.selectExample.beverages);
+   }
+
+   function doCodeForShowTxtSelections(){
+         document.selectExample.textOfSelections.value
+                = textOfSltns(document.selectExample.beverages);
+   }
+
+   function doCodeForShowTxtArraySelections(){
+    var sltnsArray  = textArrayOfSltns(document.selectExample.beverages);
+     document.selectExample.textArrayOfSelections.value  // spaja elemente niza u string i vraca string
+														// elementi su odvojeni separatorom koji se navede kao argument (podrazumevani je zarez)
+         =  sltnsArray.join('\n') ;
+   }
+   
+   //-->
+   
+</script>
+  </head>
+  
+  <body>
+    <h1>Total Options Selected with Variations</h1>
+    <p>
+      The form below illustrates using JavaScript to calculate
+      the total number of options selected in a SELECT FORM element.
+    </p>
+    <form name="selectExample">
+      <p>
+        <select name="beverages"
+                multiple="multiple"
+                size="3">
+          <option  value="tea">tea</option>
+          <option  value="coffee">coffee</option>
+          <option  value="water">water</option>
+          <option  value="milk">milk</option>
+          <option  value="beer">beer</option>
+          <option  value="wine">wine</option>
+        </select><br><br>
+        <input   type="button"
+         name="showNumSelections"
+         value="Click here to show the number of the Selections"
+         onclick="doCodeForShowNumSelections();"><br>
+        Your number of selections was: 
+        <input
+	 type="text"
+         name="numberOfSelections"><br><br>
+        <input
+         type="button"
+         name="showTxtSelections"
+         value="Click here to show the text of the Selections"
+         onclick="doCodeForShowTxtSelections();"><br>
+        The text  of your selections was: 
+        <textarea     
+         rows="6"
+         name="textOfSelections"></textarea><br><br>
+        <input
+         type="button"
+         name="showTxtArraySelections"
+         value="Click here to show the text (array) of the Selections"
+         onclick="doCodeForShowTxtArraySelections();"><br>
+        The text (array) of your selections was: 
+        <textarea     
+         rows="6"
+         name="textArrayOfSelections"></textarea>
+         
+      </p>
+    </form>  
+    </body>
+</html>

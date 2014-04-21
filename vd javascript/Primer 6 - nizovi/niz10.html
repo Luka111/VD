@@ -1,0 +1,27 @@
+<html>
+<body>
+
+<script language="javascript">
+
+function sortNamesByLength(a,b){
+return a.length -b.length;   // a.length vraca duzinu stringa a
+}
+function CmpLetterInName(a,b){
+return a.charCodeAt(a.length-2)-b.charCodeAt(b.length-2);  //charCodeAt vraca jedinstveni kod karaktera koji se nalazi na specificiranom mestu u stringu
+}  // indeks prvog karaktera u stringu je 0, drugog 1, poslednjeg str.length-1
+var arr = new Array(6)
+arr[0] = "Ana"
+arr[1] = "Dana"
+arr[2] = "Aleksandra"
+arr[3] = "Tatjana"
+arr[4] = "Mileva"
+arr[5] = "Sonja"
+
+document.write(arr + "<br />")
+document.write(arr.sort(sortNamesByLength)+ "<br />")
+document.write(arr.sort(CmpLetterInName))
+</script>
+
+</body>
+</html>
+

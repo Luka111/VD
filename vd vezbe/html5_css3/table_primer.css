@@ -1,0 +1,43 @@
+table{
+width: 600px;
+border-collapse: collapse;  /* da li su nam ivice celija tabele razdvojene ili ne; collapse|separate */
+border:none;
+}
+
+th, tr {
+border:none;
+}
+
+th{
+background-color: #000;
+color: #fff;
+}
+tr:nth-of-type(even){      /* element:nth-of-type(n) primenjuje pravilo na svaki n-ti element odgovarajuceg tipa (element) */
+background-color: #f3f3f3; /* indeks prvog potomka je 1; umesto even moze i 2n, a umesto odd 2n+1*/
+}
+tr:nth-of-type(odd){      /* primenjuje pravilo na neparne redove, #f3f3f3 se primenjuje na parne redove */
+background-color:#ddd;
+}
+td:nth-child(n+2){        /* element:nth-child(n) primenjuje pravilo na svaki n-ti element koji je sibling elementima td bez obzira na tip u okviru parent elementa za td ( a to je tr)*/
+text-align: right;       /* formula (an + b) a je umnozak brojaca, n je brojac koji krece od 0, b je ofset */
+
+}                        /* ovde moze i nth-of-type jer u okviru roditelja (tr) jedini potomci tr su elementi td */
+tr:last-child{
+font-weight: bolder;     /* primenjuje pravilo na poslednji tr element */
+
+}
+td:last-child{
+font-weight: bolder;
+}
+
+tr:last-child td:last-child{   /* koji su zajednicki elementi oba poslednja potomka (tr i td) */
+font-size:24px;
+}
+
+tr:nth-last-child(2){         /* nth-last-child(n) primenjuje pravilo na svaki element koji je n-ti sibling elementa tr, bez obzira na tip u okviru parent elementa za tr, brojeci od poslednjeg */
+color: green;
+}
+
+tr:nth-last-child(-n+3) {      /* n je brojac koji krece od 0, pa imamo primenu na -0+3, -1+3, -2+3 = 3, 2, 1 tr element brojeci od poslednjeg */
+text-align: right;           /* moglo je i nth-child(n+5) */
+} 

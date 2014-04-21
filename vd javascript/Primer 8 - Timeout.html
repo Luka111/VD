@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Timeout</title>
+	<script language="javascript">
+
+	function novitekst()
+	{
+		document.myform.mytext.value="Cekaj malo!";
+		setTimeout("drugitext()",3000); // koristi se za izvrsavanje odredjenog koda nakon specificiranog vremenskog intervala
+		//Funkcija kojom se za 3000 milisekundi odlaze pozivanje
+		//sledece funkcije, u nasem slucaju drugitext()
+		// kod koji se definise u okviru setTimeout metode izvrsava se samo jednom
+	}
+	
+	function drugitext()
+	{
+		document.myform.mytext.value="Promenio sam se!";
+	}
+	</script>
+</head>
+<body>
+	<form name="myform">
+		<input type="text" name="mytext" value="Pritisni KLIK!" size="30">
+		&nbsp;&nbsp;
+		<input type="button" name="but1" value="KLIK!" onclick="novitekst()">
+	</form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>B</title>
+<script language="javascript">
+function popuni()
+{
+	document.formaB.tekstB.value= window.opener.document.formaA.tekstA.value;  // opener property vraca referencu na prozor koji je kreirao tekuci prozor
+	}
+	
+</script>
+<body onLoad="popuni();">
+<form name="formaB" >
+<input type="text" name="tekstB" >
+
+<hr>
+Promenite boju OtacObjektu
+<br>
+<input type="button" onClick="window.opener.document.bgColor='yellow'" value="yellow">
+<input type="button" onClick="window.opener.document.bgColor='lightgreen'" value="lightgreen">
+<input type="button" onClick="window.opener.document.bgColor='white'" value="white">
+</form>  <!-- kada novi prozor kreiramo sa window.open iz novootvorenog prozora mozemo koristiti opener property za dohvatanje podataka iz roditeljskog prozora -->
+</body>
+</head>
+</html>

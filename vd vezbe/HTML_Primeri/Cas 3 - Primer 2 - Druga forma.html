@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Primer lepse forme</title>
+</head>
+<body>
+<h1>Moja druga forma</h1>
+<form name="mojaforma" action="">  <!-- mailto:sofija@etf.rs -->
+
+<!-- Koriscenje grupe polja -->
+<fieldset>
+	<legend>Licne informacije:</legend>
+	
+	Ime: <input type="text" size="30" name = "ime" value="Drasko" disabled="disabled"> <br>
+	<!-- Polje za ime nije editabilno -->
+	
+	E-mail: <input type="text" name = "email" size="30"> <br>
+	Datum rodjenja: <input type="text" name = "datum" size="10"> <br>
+	
+	<!-- Koriscenje radio dugmadi pomocu labela -->
+	Pol:
+	<label for="muski">Muski</label>
+	<input type="radio" name="pol" id="muski" value="male">
+	<label for="zenski">Zenski</label>
+	<input type="radio" name="pol" id="zenski" value="female"> <br>
+	
+	<input type="submit" value="Potvrdi">
+</fieldset>
+</form>
+</body>
+</html>

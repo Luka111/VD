@@ -1,0 +1,13 @@
+p
+{
+text-align: center;   /* left, right, justify */
+color: red;
+font-family: arial; /*text-decoration: underline; overline, line-through - dekoracija teksta*/
+					/* font-weight: bold; - debljina fonta*/
+}
+
+h1
+{
+color:#FFFFFF; 
+background-color:blue
+}

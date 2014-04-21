@@ -1,0 +1,48 @@
+<html><head><title>Example menu</title>
+
+<style type="text/css">
+.menu {font-family:Tigerteeth ICG; font-size:12pt; font-weight:none; color:white }
+</style>
+
+<script language="javascript">
+
+function movein(which,html){
+document.getElementById(which).style.background='mediumblue'  // getElementById vraca element koji ima atribut ID sa specificiranom vrednoscu
+document.getElementById('description').innerHTML=html   // za promenu sadrzaja nekog html elementa koristi se property innerHTML
+}
+
+function moveout(which){
+document.getElementById(which).style.background='steelblue'
+document.getElementById('description').innerHTML='&nbsp;'
+}
+
+</script></head><body bgcolor="#ffffff">
+<div align="center">
+  <table bgcolor="black" border="1" cellpadding="2" cellspacing="0" height="131" width="150">
+    <tbody><tr> 
+      <td class="menu"  id="choice1" bgcolor="steelblue" onmouseover="movein('choice1','Advanced Menu Generator')" onmouseout="moveout('choice1')" onclick="location.href='http://www.google.com/'"> 
+        <div align="center">menu option 1</div>
+      </td>
+    </tr>
+    <tr><td class="menu" id="choice2" style="background: steelblue " onmouseover="movein('choice2','is quite dynamic')" onmouseout="moveout('choice2')" onclick="location.href='http://www.google.com/'"> 
+      <div align="center">menu option 2</div>
+    </td>
+    </tr>
+    <tr><td class="menu"  id="choice3" style="background: steelblue " onmouseover="movein('choice3','with several options')" onmouseout="moveout('choice3')" onclick="location.href='http://www.google.com/'"> 
+      <div align="center">menu option 3</div>
+    </td>
+    </tr>
+    <tr><td class="menu"  id="choice4" style="background: steelblue " onmouseover="movein('choice4','Fantastic')" onmouseout="moveout('choice4')" onclick="location.href='http://www.google.com/'"> 
+      <div align="center">menu option 3</div>
+    </td>
+    </tr>
+    <tr><td class="menu"  id="choice5" style="background: steelblue" onmouseover="movein('choice5','Easy to use!')" onmouseout="moveout('choice5')" onclick="location.href='http://www.hypergurl.com/'"> 
+      <div align="center">menu option 3</div>
+    </td>
+    </tr>
+    <tr> 
+      <td  bgcolor="white" height="18"><font id="description" face="arial" size="1">&nbsp;</font></td>
+    </tr>
+  </tbody></table>
+</div>
+</body></html>

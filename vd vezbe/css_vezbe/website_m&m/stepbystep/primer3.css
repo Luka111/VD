@@ -1,0 +1,121 @@
+/*
+Komentar
+
+*/
+
+body {
+	font: 14px arial; 	
+	background-color: #BBBBBB;
+	color: #777777;
+	background-image: url(images17.jpg); 
+}
+
+a {                                   /* DODATO */
+	color: #333333;	
+	font-weight: bold;
+	/*text-decoration: overline,underline, none, line-through*/
+}
+
+a:hover {                             /* DODATO */
+	background-color: #777777;
+	color: #BBBBBB;	
+}
+
+
+h1 {
+	font: 18px arial;	
+}
+
+
+#wrapper {
+	width: 779px; 
+	margin: auto;		
+}
+
+#header {
+	background-image : url(header_boat.png);
+	width: 774px;
+	height: 163px;	
+	color: #444444;
+	text-align: left;	
+	padding-left: 5px;
+}
+
+#header h1 {
+	font: 24px arial;
+	
+}
+
+#quicknav {	
+	width: 777px;
+	height: 30px;
+	background-color: #444444;	
+	color: #111111;
+	border: 1px solid #222222;
+}
+
+
+#quicklinks {                    /* DODATO */
+	width:  500px;
+	float: left;	
+	padding: 4px;
+	text-align: center;
+}
+#quicklinks a {                   /* DODATO */
+	color: #DDDDDD;	
+}
+
+#quicklinks a:hover {             /* DODATO */
+	background-color: #DDDDDD;
+	color: #BBBBBB;	
+}
+
+#navigation {
+	width: 225px;	
+	float: right;
+	background-color: #DDDDDD;
+
+}
+
+#main {
+	
+	width: 535px;
+	float: left;
+	background-color: #dddddd;
+	border-bottom: #999999 1px solid; 
+	border-left: #999999 1px solid; 
+	border-right: #999999 1px solid; 
+	border-top: #999999 0px solid; 
+
+	padding: 5px;
+	
+} 
+	
+.article {
+	margin-bottom: 10px;
+	background-color: #ffffff;
+	border: #999999 1px solid;
+	padding: 15px;
+	text-align: justify;
+	text-indent: 0.5cm
+}
+
+
+.article img{
+	float: right;
+	margin-left: 5px;
+	border: 1px solid #000000;
+
+	
+}
+
+
+.navigationblock {                   /* DODATO */
+	margin-bottom: 5px;
+	border: #999999 1px solid;
+	padding: 5px;
+	text-align: justify;
+	background-color: #ffffff; 
+    
+}
+.navigationblock ol {list-style-type: decimal /*lower-roman,upper-roman, lower-alpha,upper-alpha  */}  /* DODATO */

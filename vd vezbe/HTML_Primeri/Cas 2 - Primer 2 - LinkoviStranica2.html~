@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>Druga stranica</h1>
+	<a href="Cas 2 - Primer 2 - Linkovi.html">Povratak na prethodnu stranicu</a>
+	<br>
+	<a href="Cas 2 - Primer 2 - Linkovi.html#vesti" target="_blank">Skok na VESTI na prethodnoj stranici</a>
+</body>
+</html>

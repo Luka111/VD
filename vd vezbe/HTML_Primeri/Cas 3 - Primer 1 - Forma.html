@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Primer forme</title>
+</head>
+<body>
+<h1>Moja prva forma</h1>
+
+<center>
+<form name="mojaforma" action="NekaDrugaStranica.php" method="GET">
+<table border="1">
+	<tr>
+		<td>Korisnicko ime:</td>
+		<td><input type="text" name="user" size="25" value="Unesite kor.ime"></td>
+	</tr>
+	<tr>
+		<td>Lozinka:</td>
+		<td><input type="password" name="pass" size="20" maxlength="8"></td>
+	</tr>
+	<tr>
+		<td>Navija za:</td>
+		<td>
+			<ul>
+				<li><input type="radio" name="navijac" value="cz" checked>Crvenu Zvezdu</li>
+				<li><input type="radio" name="navijac" value="pa">Partizan</li>
+				<li><input type="radio" name="navijac" value="voj">Vojvodinu</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>Hobi:</td>
+		<td>
+			<input type="checkbox" name="hobi" value = "knjige">Cita knjige
+			<br>
+			<input type="checkbox" name="hobi" value = "tenis" >Igra tenis
+			<br>
+			<input type="checkbox" name="hobi" value = "gitara" checked>Svira gitaru
+		</td>
+	</tr>
+	<tr>
+		<td>Omiljena hrana:</td>
+		<td>
+			<select name="hrana">
+				<option>kineska</option>
+				<option>italijanska</option>
+				<option selected>srpska</option>
+				<option>meksicka</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Omiljena muzika:</td>
+		<td>
+			<select name="muzika" size="5" multiple>
+				<option>Klasika</option>
+				<option selected>Pop</option>
+				<option selected>Rock</option>
+				<option>Jazz</option>
+				<option>Soul</option>
+				<option>Dance</option>
+				<option>Folk</option>
+				<option>Metal</option>
+				<option>RnB</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td colspan = "2">
+			Komentar: <br/>
+			<textarea cols="40" rows="6" name="comment">Unesite neki tekst...</textarea>
+		</td>
+		
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" value="POSALJI">
+			<input type="reset" value="PONISTI">
+			<input type="button" value="MojeDugme" onClick="alert('Ne diraj dugme!')">
+		</td>
+	</tr>
+</table>
+</form>
+</center>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+	<head></head>
+	
+	<script language="JavaScript">
+		x1 = /HTML/
+		y1 = "html: HTML ili HyperText Markup Language. HTML se uci na VD. HtmL je jednostavan jezik".replace(x1, "JAVA");
+		document.write("Metodom REPLACE promenjen je uzorak HTML u JAVA pa string izgleda ovako:<br>" + y1 );
+		//replace metod ispituje da li u stringu postoji uzorak i ako postoji zameni uzorak unutar stringa nekim drugim stringom 
+		//metod ima dva argumenta, prvi je uzorak, a drugi je string koji treba da zameni uzorak
+
+		document.write("<br>");
+		
+		x2 = /HTML/g   // g - globalna primena - vrsi se zamena svakog uzorka koji se nadje u okviru stringa
+		y2 = "html: HTML ili HyperText Markup Language. HTML se uci na VD. HtmL je jednostavan jezik".replace(x2, "JAVA");
+		document.write("<br>Upotrebom atributa i nad uzorkom, string izgleda ovako:<br>" + y2 );
+		
+		document.write("<br>");
+		
+		x3 = /HTML/gi  // gi - globalna primena, case insensitive 
+		y3 = "html: HTML ili HyperText Markup Language. HTML se uci na VD. HtmL je jednostavan jezik".replace(x3, "JAVA");
+		document.write("<br>Upotrebom atributa ig nad uzorkom, string izgleda ovako:<br>" + y3 );
+	</script>
+	
+	<body>
+	</body>	
+</html>

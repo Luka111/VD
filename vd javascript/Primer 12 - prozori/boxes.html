@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>PROZORI</title>
+</head>
+<body>
+<script language = "JavaScript">
+function Alert() {
+	alert("Welcome!");     // prikazuje obavestenje korisniku - novi manji prozor
+}
+function Confirm() {
+	var x;
+	x = confirm("Are you sure you are ok?");  // prikazuje dialog box sa specificiranim obavestenjem i dugmadi OK i Cancel
+	if (x)                  // obicno se koristi za verifikaciju ili prihvatanje necega; metod vraca true ako je korisnik kliknuo OK, false u suprotnom
+		alert("Good!");
+	else
+		alert("Too bad!");
+}
+function Prompt() {
+	var y;
+	y = prompt("Please enter your name");  // dialog box koji od korisnika zahteva neki unos
+	alert(y);   // metod vraca unetu vrednost ako je korisnik nakon unosa kliknuo ok, ako je kliknuo cancel vraca null
+}
+
+</script>
+<form>
+<input type="button" name="dugme1" value="Alert"  onclick="Alert()">
+
+<input type="button" name="dugme2" value="Confirm"  onclick="Confirm()">
+<input type="button" name="dugme3" value="Prompt"  onclick="Prompt()">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+
+<head>
+	<script language="javascript">
+		var proveri = function(){
+			var kartica = document.mojaForma.kartica.value;
+			console.log('Prva',kartica[0],' Poslednja',kartica[kartica.length-1]);
+			var uzorak = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
+			var ind = true;
+			/*if (uzorak.test(kartica)){
+				if ((kartica[0]!=0) && (kartica[kartica.length-1]!=0)){
+					alert('Dobro si uneo za karticu');
+				}else{
+					alert('Zamalo za karticu al ne');
+					ind = false;
+				}
+			}else{
+				alert('Lose za karticu');
+				ind = false;
+			}*/
+      var datum = document.mojaForma.datum.value;
+      var uzorak2 = /^\d{2}\/([0][1-9]|[1][0-2])$/;			
+      if (uzorak2.test(datum)){
+        var danasnjiDatum  = new Date();
+        var godina = danasnjiDatum.getFullYear(),
+            mesec = danasnjiDatum.getMonth()+1;
+        var unetaGodina = parseInt(datum.substring(0,2)), unetMesec = parseInt(datum.substring(3,5)); 
+        console.log(godina,mesec,unetaGodina,unetMesec);
+        alert('Dobar datum');
+      }else{
+        alert('Los datum');
+      }
+		}
+	</script>
+<head>
+
+<body>
+	<form name="mojaForma">
+		<span> Unesite broj kreditne kartice </span></br>
+		<input type="text" name="kartica" size="20"></br>
+		<span> Unesite broj gg/mm </span></br>
+		<input type="text" name="datum" size="20"></br>
+		<input type="button" name="Submit" value="Submit" onClick="proveri()">
+	</form>
+</body>
+
+<html>

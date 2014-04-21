@@ -1,0 +1,67 @@
+<html><head><title>JavaScript Animation</title>
+	<script language="javascript">
+	
+	var timerID1;
+	var timerID2;
+	img1= new Image();    // pravimo objekat Image i postavljamo mu source
+	img1.src="eye_c.gif";
+	img2= new Image();
+	img2.src="eye_l.gif";
+	img3= new Image();
+	img3.src="eye_d.gif";
+	img4= new Image();
+	img4.src="eye_r.gif";
+	img5= new Image();
+	img5.src="closed.gif";
+
+ 	function blink()
+                {  
+                document.righteye.src=img5.src;  // postavljamo slike sa zatvorenim okom
+                document.lefteye.src=img5.src;
+                timerID1=setTimeout("lids()", 200);  // posle 200ms otvara oci 
+                }
+
+	function lids()
+               {
+               document.righteye.src=img1.src;
+               document.lefteye.src=img1.src;
+               timerID2=setTimeout("blink()", 3000);  // na svakih 3000ms zatvara oci tj. trepce
+               }
+
+	//-->
+	</script></head><body onload="blink()" alink="#00eeee" bgcolor="#CC3366" link="#eeee00" text="#eeeeee" vlink="#eeee00">
+
+
+<font face="ARIAL"><b>
+
+</b></font>
+<h1 align="center"><font face="ARIAL"><b>JavaScript Animation Example </b></font></h1>
+
+<font face="ARIAL"><b>	
+
+</b><table border="0" cellpadding="5" align="center">
+<tr>
+	<td colspan="3" align="center">
+		<img name="lefteye" src="closed.gif" border="0" height="75" width="50">  <!-- slike za levo i desno oko, pocetni source je slika closed.gif -->
+		<img name="righteye" src="closed.gif" border="0" height="75" width="50">
+	</td>
+</tr>
+<tr>
+	<td>
+		<b><a href="" onmouseover="lefteye.src=img2.src ;righteye.src=img2.src; " onmouseout="lefteye.src=img1.src ;righteye.src=img1.src; "> 
+		[Link 1]</a></b>
+	</td>
+	<td>
+		<b><a href="" onmouseover="lefteye.src=img3.src ;righteye.src=img3.src; " onmouseout="lefteye.src=img1.src ;righteye.src=img1.src; "> 
+		[Link 2]</a></b>
+
+	</td>
+	<td>
+		<b><a href="" onmouseover="lefteye.src=img4.src ;righteye.src=img4.src; " onmouseout="lefteye.src=img1.src ;righteye.src=img1.src; "> 
+		[Link 3]</a></b>
+
+	</td>
+</tr>
+</table>
+</font><hr>
+</body></html>

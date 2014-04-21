@@ -1,0 +1,36 @@
+
+table{
+	width: 50%;
+	height: 50%;
+	border-color: red;
+	border-width: 3px;
+	border-style: solid;
+	background-color: green;
+	color: white;
+	margin:auto;
+}
+
+th {
+	background-color: blue;
+}
+
+th, td {
+	padding: 5px;
+}
+
+
+ul.a  {
+	list-style-type: square;
+}
+
+ul.b  {
+	list-style-type: disc;
+}
+
+ul.c {
+	list-style-type: circle;
+}
+
+ol {
+	list-style-type: lower-alpha; /*upper-alpha, lower-roman, upper-roman; list-style-image: url(confluence.jpg);*/
+}

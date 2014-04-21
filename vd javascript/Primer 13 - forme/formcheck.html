@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>
+Proveri formu
+</title>
+
+<SCRIPT LANGUAGE="JavaScript">
+function validate() {
+if (document.pageForm.user.value == "") {
+alert("You have not entered a Name") ;
+}
+if (document.pageForm.city.value == "") {
+alert("You have not entered a City") ;
+
+}
+if (document.pageForm.country.value == "") {
+alert("You have not entered a Country") ;
+
+}
+var iSelect = document.pageForm.continent.options[document.pageForm.continent.selectedIndex].value ;
+if (iSelect == 0) {
+alert("You have not selected a Continent") ;   // var lista = document.imeForme.imeListe;
+}                                              // var selected = lista.options[lista.selectedIndex].value;
+if (!document.pageForm.radio1[0].checked &&
+!document.pageForm.radio1[1].checked &&
+!document.pageForm.radio1[2].checked){
+alert("You did not select any Options") ;
+}
+
+}
+</SCRIPT>
+
+          
+</head>
+<form name="pageForm" >
+<br>name <input type="text" name="user" size="30">
+<br>city <input type="text" name="city" size="30">
+<br>country <input type="text" name="country" size="30">
+<br>continent <select size="1" name="continent">
+<option value="0" selected>please select a continent</option>
+<option value="1">europe</option>
+<option value="2">asia</option>
+<option value="3">north america</option>
+<option value="4">south america</option>
+<option value="5">africa</option>
+<option value="6">oceania</option>
+<option value="7">antartica</option>
+</select>
+<br>option 1 <input type="radio" name="radio1" value="option1">
+<br>option 2 <input type="radio" name="radio1" value="option2">
+<br>option 3 <input type="radio" name="radio1" value="option3">
+<br><input type="submit" value="submit" onclick="validate()">
+</form>
+</html>
+
+          

@@ -1,0 +1,16 @@
+p.right 
+{
+text-align: right;
+font-variant:small-caps /*normal*/  /* poseban stil fonta */
+}
+
+p.center 
+{
+text-align: center;
+font-style: oblique; /*normal, italic, oblique - oblik fonta*/ /* line-height: 5; - razmak izmedju linija teksta; word-spacing: 10; - razmak izmedju reci (px, cm...)*/
+} 
+
+.left {
+text-align: left;
+letter-spacing: -3px /* razmak izmedju slova */
+} 

@@ -1,0 +1,21 @@
+<html>
+	<head></head>
+	
+	<script language="JavaScript">
+	/*JavaScript funkcije se često upotrebljavaju za proveru unetih podataka od strane klijenta.
+	JavaScript ima razvijenu podršku za razne vrste provera i one se obavljaju na klijentskoj strani.
+	Uzorak se još naziva i regularni izraz (regular expression) i može se definisati na dva načina: 
+	var ime_uzorka = new RegExp(“primer”) 
+	var ime_uzorka = /primer/
+	Na oba načina se formira objekat uzorka koji se naziva ime_uzorka i kome odgovara svaki string koji u sebi sadrži podstring primer. 
+	*/
+		x = /Script/
+		y = "JavaScript is computer language ".search(x);  // search ispituje da li u stringu postoji definisani uzorak
+		//rezultat je pozicija prvog pojavljivanja uzorka ili -1, ako ne pronađe uzorak; ne podrzava globalnu pretragu
+
+		document.write("Metodom SEARCH pronadjen je uzorak na poziciji: " + y );
+	</script>
+	
+	<body>
+	</body>	
+</html>

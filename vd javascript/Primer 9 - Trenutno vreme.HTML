@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<TITLE> Trenutno vreme </TITLE>
+<SCRIPT language="JavaScript">
+	function Vreme(){
+		time = new Date()
+		cas=time.getHours()  // vracanje sata (0-23) minuta (0-59) i sekundi (0-59) za navedeni datum
+		minuti=time.getMinutes()
+		sekunde=time.getSeconds()
+		temp = "" + ((cas>12)?cas-12:cas)
+		temp += ((minuti<10)?":0":":")+minuti
+		temp += ((sekunde<10)?":0":":")+sekunde
+		temp += ((cas>=12)?" P.M.":" A.M.")
+		document.vremeForma.cifre.value=temp
+		setTimeout(Vreme,1000)
+		//posle svakih 1000milisekundi, odnosno 1 sekunde
+		//ponovo se ucitava funkcija Vreme()
+	}
+
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" onLoad="Vreme()">
+<FORM name="vremeForma">
+	Trenutno vreme je &nbsp <INPUT TYPE="text" NAME="cifre" SIZE=12>
+</FORM>
+</BODY>
+</HTML>
+

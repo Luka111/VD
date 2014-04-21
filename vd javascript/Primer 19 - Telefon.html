@@ -1,0 +1,63 @@
+
+<html>
+<head>
+<title>telefon</title>
+
+<script language="javascript">
+function proveri()
+{
+/* karakteri koji se koriste u uzorku: 
+\d bilo koja cifra [0-9]                     \w neki od karaktera (mala, velika slova, brojevi, _)
+\D bilo koji karakter koji nije cifra        alfanumericki znak sebe predstavlja
+. bilo koji karakter osim nove linije        [...]  bilo koji karakter naveden izmedju []
+[^...] bilo koji karakter koji nije naveden izmedju   {n, m} prethodni element se ponavlja najmanje n i ne vise od m puta
+{n, } prethodni element se ponavlja n ili vise puta  {n} prethodni element se ponavlja tacno n puta 
+? prethodni element se ne pojavljuje ili se pojavljuje jednom   + prethodni element se ponavlja jednom ili vise puta
+* prethodni element se ne pojavljuje ili se pojavljuje vise puta
+| alternativa, pojavljuje se samo levi ili desni deo uzorka u stringu
+(...) grupisanje simbola u jedan objekat nad kojim se mogu koristiti ? * + |
+^ pretraga uzorka na pocetku znakovnog niza
+$ pretraga uzorka na kraju znakovnog niza
+*/
+	var tel=/^(\d{10}|\d{3}-\d{3}-\d{4}|\(\d{3}\)\d{3}-\d{4})$/;
+	// telefon koji se unosi treba da bude u nekom od sledecih oblika:
+	// 10 cifara
+	// 3 cifre - 3 cifre - 4 cifre
+	// (3 cifre) 3 cifre - 4 cifre
+	var tekst=document.forma.izraz.value;
+	if (tel.test(tekst))  // tekst.match(tel) test vraca true ako rezultat nije null; za razliku od match metode, test se primenjuje
+	{                     // nad objektom uzorka, a argument je string koji se proverava
+		var rezultat=tekst.match(/\d+/g);
+		var i=0;
+		var novirez="";
+		while (rezultat[i] ) {
+		novirez+=rezultat[i++];
+		}
+		document.forma.rezultat.value=novirez;
+	}
+	else 
+	{
+		document.forma.rezultat.value="Pogresan unos";
+	}
+ }
+</script>
+</head>
+
+<body>
+<form name="forma">
+  <table width="50%"  border="0" align="center">
+    <tr>
+      <td>Unesite izraz za proveru: 
+        <input type="text" name="izraz" size="20"></td>
+    </tr>
+    <tr>
+      <td align="center"><input type="button" name="Submit" value="Submit" onClick="proveri()"></td>
+    </tr>
+    <tr>
+      <td>Rezultat: 
+        <input type="text" name="rezultat" size="20"></td>
+       </tr> 
+  </table>
+</form>
+</body>
+</html>

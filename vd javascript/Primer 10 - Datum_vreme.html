@@ -1,0 +1,43 @@
+
+<html>
+	<head>
+		<title>Danasnji dan</title>
+	</head>
+
+	<body bgcolor="white">
+	<script language="javascript">
+	daniunedelji = new Array("nedelja", "ponedeljak", "utorak", "sreda", "cetvrtak", "petak", "subota")
+	var danas = new Date();
+	
+	//jos neki nacini predstavljanja vremena
+	dan1 = new Date("November 29, 2013 06:37:00"); //new Date("month day, year hours:minutes:seconds")
+	dan2 = new Date(2013,10,29); //new Date(year, month, day)
+	dan3 = new Date(2013,10,29,6,37,0);  //new Date(year, month, day, hours, minutes, seconds)
+	
+	alert("Bivsi dan republike proslavljen je ove godine: " + dan1);
+	//GMT - Greenwich Mean Time
+	setTimeout("test()",1000); 
+	//ova funkcija odlaze izvrsavanje nastavka programskog koda 
+	//u ovom slucaju funkcije test() za 1000 milisekundi
+
+	function test() {
+
+		document.write("Danas je " + daniunedelji[danas.getDay()] + ".");  //getDay() vraca dan u nedelji: 0 - nedelja, 1 - ponedeljak ... 6 - subota za navedeni datum
+		document.write("<br> Od 1.1.1970. godine je proteklo " + danas.getTime()+" milisekundi." );
+		// getTime() vraca vreme do navedenog datuma u milisekundama (od 1.1.1970 00:00:00). 
+		var godina = danas.getFullYear();  // getFullYear() vraca godinu iz navedenog datuma (4 cifre)
+
+		var  mesec=danas.getMonth()+1;  //getMonth() vraca mesec za navedeni datum (0 - januar, 1 - februar ... 11 - decembar)
+		// getDate() vraca dan u mesecu (1-31) za navedeni datum
+		document.write("<br>" + danas.getDate() +  "." +mesec + "."+ (godina + "."));
+	
+		var sat = danas.getHours();
+		var min = danas.getMinutes();
+		var sec = danas.getSeconds();
+		document.write("<br>Tacno je: " +sat + " casova " + min + " minuta i " + sec+ " sekundi." );
+
+}
+
+</script>
+</body>
+</html>

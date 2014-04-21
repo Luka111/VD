@@ -1,0 +1,126 @@
+<html>
+<HEAD>
+<SCRIPT LANGUAGE="JavaScript">
+correct=0;
+wrong=0;
+
+function add() {
+if(document.quizform.arithmetic[0].checked)
+maxValue=10;
+else {
+if(document.quizform.arithmetic[1].checked)
+maxValue=30;
+else {
+maxValue=60;
+   }
+}
+numA=Math.floor((Math.random()*maxValue)+1);  // Math.floor vrsi odsecanje decimalnog dela
+numB=Math.floor((Math.random()*maxValue)+1);
+numC=numA + numB;
+Answer=window.prompt(  numA + "+"  + numB +  " = ", "");
+ans();
+}
+function subtract() {
+if(document.quizform.arithmetic[0].checked)
+maxValue=10;
+else
+{if(document.quizform.arithmetic[1].checked)
+maxValue=30;
+else {
+maxValue=60
+   }
+}
+numA=Math.floor((Math.random()*maxValue)+1);
+numB=Math.floor((Math.random()*maxValue)+1);
+numC=numA - numB;
+Answer=window.prompt(  numA + "-"  + numB+  " = ", 0);
+ans();
+}
+function divide() {
+if(document.quizform.arithmetic[0].checked)
+maxValue=10;
+else {
+if(document.quizform.arithmetic[1].checked)
+maxValue=30;
+else {
+maxValue=60
+   }
+}
+numA=Math.floor((Math.random()*maxValue)+1);
+numB=Math.floor((Math.random()*maxValue)+1);
+numC=numA / numB;
+numC=Math.round(numC)   // zaokruzuje realni broj na najblizi ceo broj; 
+window.alert("Please round your answer off:\n"
++".5 or higher rounds one number up\n"
++".4 or lower rounds one number down");
+Answer=window.prompt(  numA + "/"  + numB +  " = ", 0);
+ans();
+}
+function multiply() {
+if(document.quizform.arithmetic[0].checked)
+maxValue=10;
+else {
+if(document.quizform.arithmetic[1].checked)
+maxValue=30;
+else {
+maxValue=60
+   }
+}
+numA=Math.floor((Math.random()*maxValue)+1);
+numB=Math.floor((Math.random()*maxValue)+1);
+numC=numA * numB;
+Answer=window.prompt(  numA + "*"  + numB +  " = ", 0);
+ans();
+}
+function check() {
+if ((correct+wrong) != 0) {
+score = "" + ((correct / (correct + wrong)) * 100);
+score = score.substring(0,4) + "%";
+alert("YOUR SCORE:  " + score + "\n" 
++ correct + " correct\n"
++ wrong + " incorrect")
+}
+else alert("You have not completed any exercises yet.");
+}
+function ans() {
+if (Answer == numC) {
+correct++;
+msg = "Congratulations, your answer is correct.";
+}
+else {
+wrong++;
+msg = "Oops!  " + Answer + " is incorrect.\n\n"
++ "The correct answer was " +numC + ".";
+   }
+score = "" + ((correct / (correct + wrong)) * 100);
+score = score.substring(0,4) + "%";  // substring(start, end) ne ukljucuje karakter na poziciji end postizemo zaokruzivanje na jednu decimalu
+alert(msg + "\n\nYOUR SCORE:  " + score + "\n" 
++ correct + " correct\n"
++ wrong + " incorrect")
+}
+//  End -->
+</script>
+</HEAD>
+
+<BODY>
+
+<center>
+<form name="quizform">
+<input type=button value="add" onClick="add()">
+<input type=button value="subtract" onClick="subtract()">
+<input type=button value="multiply" onClick="multiply()">
+<input type=button value="divide" onClick="divide()">
+<br>
+<br>
+<input type="radio" name="arithmetic">Easy
+<input type="radio" name="arithmetic" checked>Moderate
+<input type="radio" name="arithmetic">Difficult
+<br>
+<br>
+<input type=button value="Check Score" onClick="check()">
+<input type=button value="Reset Score" onClick="javascript:correct=0;wrong=0;">
+</form>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>
+	Primer faktorijela i formi
+	</title>
+	<script language="Javascript">
+		function factorialFunction(n)  //n je argument koji dobijamo iz funkcije racunaj
+		{	if (isNaN(n) || n < 0) return "Greska";
+			//isNan() je funkcija koja se koristi da proveri da li vrednost nije broj. Vraca vrednosti true ili false
+			//U nasem slucaju ispitujemo ako nije unet broj ili je unet broj manji od 0, da se ispise Greska.
+			return( n == 0 ? 1 : n*factorialFunction(n - 1));
+		}
+ 
+		function racunaj() { 
+			//funkcija racunaj 
+			var n;
+			n = parseInt(document.faktorijel.argument.value, 10);
+			//parseInt() funkcija parsira string i vraca ceo broj, u ovom slucaju sa osnovom 10(decimalni br.)
+			//koristi se 8 za oktalne, a 16 za hexadecimalne vrednosti
+			document.faktorijel.result.value=factorialFunction(n);      
+	     }
+	    
+	     
+</script>
+</head>
+
+<body>
+<table cellspacing="0" cellpadding="6" border="0" bgcolor="#99AA99" width="350">
+	<tr> <td colspan="2">&nbsp; </td> </tr>
+	<form name="faktorijel">
+	<tr>
+		<td align="right">
+			Unesite <i>n</i> da bi izracunali <i>n!</i>
+		</td>
+		<td>
+			<input type="text" name="argument" value=""  size="20" maxlength="3">
+		</td>
+	</tr>
+	<tr>
+		<td align="right">
+			<input type="button" value="Izracunaj" onclick="racunaj()">
+			<!-- na dogadjaj klik misem na dugme se poziva funkcija racunaj-->
+		</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td align="right">
+			Rezultat je
+		</td>
+		<td align="left">
+			<input name="result" value="" size="20">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	</form>
+</table>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <script language="javascript">
+      var nizTrenVreme = function(){
+        var trenutnoVreme = new Date();
+        var niz = [];
+        niz.push(trenutnoVreme.getDay());
+        niz.push(trenutnoVreme.getMonth() + 1);
+        niz.push(trenutnoVreme.getDate());
+        niz.push(trenutnoVreme.getFullYear());
+        niz.push(trenutnoVreme.getHours());
+        niz.push(trenutnoVreme.getMinutes());
+        niz.push(trenutnoVreme.getSeconds());
+        return niz;
+      }
+      var trenutnoVreme = nizTrenVreme();
+      var trenVreme = function(){
+        document.mojaForma.datumVreme.value = new Date();
+        document.mojaForma.pocetniNiz.value = trenutnoVreme;
+        document.mojaForma.rezultujuciNiz.value = trenutnoVreme;
+      };
+      var menjaj = function(value){
+        switch(value){
+        case "1":
+          var pom = nizTrenVreme();
+          document.mojaForma.rezultujuciNiz.value = pom;
+          break;
+        case "2":
+          var pom = nizTrenVreme();
+          document.mojaForma.rezultujuciNiz.value = pom.sort(function(a,b){return b-a;});
+          break;
+        case "3":
+          var pom1 = nizTrenVreme();
+          var pom2=[];
+          for (var i=0; i<pom1.length; i++){
+            if (pom1[i] % 2 == 0) pom2.push(pom1[i]);
+          }
+          document.mojaForma.rezultujuciNiz.value = pom2;
+          break;
+        case "4":
+          var pom1 = nizTrenVreme();
+          var pom2=[];
+          for (var i=0; i<pom1.length; i++){
+            if (pom1[i] % 2 != 0) pom2.push(pom1[i]);
+          }
+          document.mojaForma.rezultujuciNiz.value = pom2;
+          break;
+        case "5":
+          var pom1 = nizTrenVreme();
+          var pom2=[];
+          for (var i=0; i<pom1.length; i++){
+            var prost = true;
+            if (pom1[i] == 1) continue;
+            for (var j=2; j<=(pom1[i]/2); j++){
+              if (pom1[i] % j == 0) {
+                prost = false;
+                break;
+              }
+            }
+            if (prost == true) pom2.push(pom1[i]);
+          }
+          document.mojaForma.rezultujuciNiz.value = pom2;
+          break;
+        }
+      };
+    </script>
+  </head>
+
+  <body onLoad="trenVreme()">
+    <form name="mojaForma">
+      <table border="1" cellspacing="2">
+        <tr>
+          <td>Datum i vreme:</td>
+          <td><input type="text" name="datumVreme" size="35"></td>
+        </tr>
+        <tr>
+          <td>Pocetni niz:</td>
+          <td><input type="text" name="pocetniNiz" size="35"></td>
+        </tr>
+        <tr>
+          <td>Odaberi tip uredjivanja niza:</td>
+          <td>
+            <select size="1" name="odaberiTip" onchange="menjaj(this.value)">
+              <option value="1" selected>Pocetni niz</option>
+              <option value="2">Sortiran opadajuce</option>
+              <option value="3">Samo parni</option>
+              <option value="4">Samo neparni</option>
+              <option value="5">Samo prosti</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Rezultujuci niz:</td>
+          <td><input type="text" name="rezultujuciNiz" size="35"></td>
+        </tr>
+      </table>
+    </form>
+  </body
+</html>

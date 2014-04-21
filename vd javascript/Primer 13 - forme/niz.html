@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>niz</title>
+<script language="javascript">
+
+function sortit(a,b){
+return(a-b)
+}
+
+function sortvalues(param){
+var inputvalues=document.sorter.sorter2.value.split(" ")  // split - deli string na osnovu separatora koji je argument metode i vraca niz podstringova
+if (param==0) //if sort alphabetically
+inputvalues.sort()
+else //else if sort numerically
+inputvalues.sort(sortit)
+document.sorter.sorter2.value="";
+for (i=0;i<inputvalues.length-1;i++)
+document.sorter.sorter2.value=document.sorter.sorter2.value+inputvalues[i]+" "
+document.sorter.sorter2.value=document.sorter.sorter2.value+inputvalues[inputvalues.length-1]
+}
+</script>
+</head>
+<body >
+<form name="sorter">
+<p>
+<textarea rows="10" name="sorter2" cols="50" wrap="virtual"></textarea><br>  <!-- tekst u textarea-i se prelama u novi red, ali se salje kao jedan dugacki string -->
+<input type="button" value="Sort alphabetically" onClick="sortvalues(0)">
+<input type="button" value="Sort numerically" onClick="sortvalues(1)">
+<input type="reset" value="Reset" >
+</form>
+</body>
+<html>

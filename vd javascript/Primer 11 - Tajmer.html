@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>Javascript timer</title>
+	<script language="JavaScript">
+
+	var timerID = 0;
+	var tStart  = null;
+
+	function UpdateTimer() {
+		
+
+	  //if(!tStart) tStart = new Date();
+		var tDate = new Date();
+		var tDiff = tDate.getTime() - tStart.getTime();     // razlika u ms od trenutka kada je pritisnuto start do sadasnjeg trenutka
+		var time = new Date(tDiff);                         // formiranje objekta Date za taj broj milisekundi
+		//tDate.setTime(tDiff);
+		document.theTimer.theTime.value = "" 
+                                   + time.getMinutes() + ":" 
+                                   + time.getSeconds() + ":"
+								   + time.getMilliseconds();
+		timerID = setTimeout("UpdateTimer()", 1); 
+	}
+
+	function Start() {
+		tStart   = new Date();
+		document.theTimer.theTime.value = "00:00:00";
+		timerID  = setTimeout("UpdateTimer()", 1); // return value fje setTimeout je integer sa identifikatorom timer-a koji je setovan
+		// ta vrednost se koristi u metodi clearTimeout() 
+	}
+
+	function Stop() {
+		if(timerID) {
+		clearTimeout(timerID);   // clearTimeout() - koristi se da bi se prekinuo metod setTimeout() pre nego sto se izvrsi
+		timerID  = 0;
+		}
+		tStart = null;
+	}
+
+	function Reset() {
+		if(timerID) {
+		clearTimeout(timerID);  
+		timerID  = 0;           
+		}
+		tStart = null;
+		document.theTimer.theTime.value = "00:00:00";
+	}
+	</script>
+</head>
+<body>
+	<center><form name="theTimer">
+	<table>
+		<tr>
+			<td colspan="3" align="center">
+				<input type="text" name="theTime" size="6" value = "00:00:00">
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr>
+			<td>
+				<input type="button" name="start" value="Start" onclick="Start()">
+			</td>
+			<td>
+				<input type="button" name="stop" value="Stop" onclick="Stop()">
+			</td>
+			<td>
+				<input type="button" name="reset" value="Reset" onclick="Reset()">
+			</td>
+		</tr>
+	</table>
+	</form></center>
+</body>
+</html>

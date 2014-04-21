@@ -1,0 +1,55 @@
+
+body{
+  width:960px;
+  margin:15px auto;
+  font-family: Arial, "MS Trebuchet", sans-serif;
+}
+
+p{
+  margin:0 0 20px 0;   /* top right bottom left */
+}
+
+p, li{
+  line-height:20px;   /* visina linije; normal|number|length|% */
+}
+
+header#page_header{
+  width:100%;
+} 
+
+header#page_header nav ul, footer#page_footer nav ul{
+  list-style: none;
+  margin: 0;  
+  padding: 0;
+}
+
+header#page_header nav ul li, footer#page_footer nav ul li{
+  padding:0;
+  margin: 0 20px 0 0;
+  display:inline;        /* specificira kako ce se prikazivati html elementi; inline|block */
+}
+
+section#posts{
+  float: left;
+  width: 74%;   /* 74% od sirine body elementa */
+  text-align:justify;
+}
+
+section#posts aside{
+  float: right;
+  width: 35%;         /* 35% od sirine section elementa */
+  margin-left: 5%;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+section#sidebar{
+  float: right;
+  width: 26%;  /* 26% od sirine body elementa */
+}
+
+footer#page_footer{
+  clear: left;   /* specificira sa koje strane elementa plutajuci (float) elementi nisu dozvoljeni; none|left|right|both */
+  width: 100%;  
+  text-align: center;
+}

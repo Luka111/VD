@@ -1,0 +1,9 @@
+/*body
+{
+text-align: center;
+} */
+#wrapper { width: 770px; font-size: 12px; font-family: arial, sans-serif; margin: auto;}		 
+.column { width: 355px; height: 400px; padding: 10px; border-width: 1px; border-style: solid; border-color:#000000; float:left;}
+.column p{ font: 12px arial, sans-serif; text-indent: 50px; text-align: justify;}
+.column h1 { width: 355px; font: bold 16px arial, sans-serif; color: #af0b1c; border-bottom: 1px solid #af0b1c; text-transform: uppercase;}
+/* border thin,thick,dashed,doted*/

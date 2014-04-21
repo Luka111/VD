@@ -1,0 +1,43 @@
+<html>
+<script language="JavaScript">
+	function proveri(){
+		var uzorak = /^1\d\d\d\d$/
+		if(document.forma.sifra1.value==document.forma.sifra2.value)
+			if(uzorak.test(document.forma.ptt.value))
+				alert("U redu je!");
+			else alert("Nije u redu! PTT broj nije u trazenom formatu");
+		else alert("Nije u redu! Sifre nisu iste!"); 	
+		
+		if(document.forma.izbor1.checked && document.forma.izbor2.checked && document.forma.izbor3.checked)
+			alert("Da li ste sigurni?");
+	}
+</script>
+<body>
+	<form name="forma">
+		<table>
+		<tr><td>Sifra: </td>
+		<td><input type="password" name="sifra1" size="20"></td>
+		</tr>
+		<tr><td>Potvrda sifre:</td>
+		<td><input type="password" name="sifra2" size="20"></td>
+		</tr>
+		<tr><td>Postanski broj:</td>
+		<td><input type="text" name="ptt" size="10"></td>
+		</tr>
+		<tr><td colspan="2">
+		Predmet1
+		<input type="checkbox" name="izbor1">
+		Predmet2
+		<input type="checkbox" name="izbor2">
+		Predmet3
+		<input type="checkbox" name="izbor3">
+		</td></tr>
+		<tr><td>
+		<input type="button" value="PROVERA" onClick="proveri()"> 
+		</td>
+		<td></td>
+		</tr>
+		</table>
+	</form>
+</body>
+</html>

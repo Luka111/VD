@@ -1,0 +1,10 @@
+<html>
+<head>
+<title>PROZORI</title>
+</head>
+<body>
+<input type="button" name="dugme" value="Otvori novi prozor"  onclick="window.open('prozor2.html','mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0,scrollbars=1,menubar=1,status=1, location=1');">
+</body>   <!-- 'prozor2.html' - url stranice koja treba da bude otvorena 'mywin' - naziv prozora (nije title) -->
+</html>   <!-- left, top - udaljenost od leve i gornje ivice, width, height - sirina, visina prozora, toolbar - da li da se toolbar prikazuje ili ne -->
+<!-- resizable - da li je dozvoljena promena velicine prozora, scrollbars, menubar, status - da li prikazivati ili ne scroll bar, menu bar, status bar -->
+<!-- location - da li prikazivati ili ne polje sa adresom -->
